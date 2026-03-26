@@ -1,13 +1,67 @@
 body {
-  background-color: rgb(198, 145, 241); /*Pode escolher outra cor se quiser*/
+  background-color: rgb(198, 145, 241);
+  
+  /* animação suave de entrada */
+  animation: aparecer 1s ease;
 }
 
+/* título */
 h1 {
-  color: white; /*Pode escolher outra cor se quiser*/
+  color: white;
   text-align: center;
+
+  /* animação */
+  animation: aparecerTopo 1.5s ease;
 }
 
+/* parágrafos */
 p {
   font-family: verdana;
   font-size: 20px;
+
+  /* animação */
+  animation: aparecer 2s ease;
+}
+
+/* efeito ao passar o mouse no texto */
+p:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* animação padrão */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* animação vindo de cima */
+@keyframes aparecerTopo {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* opcional: fundo animado (se quiser deixar mais chamativo) */
+body {
+  background: linear-gradient(-45deg, #c691f1, #a066d3, #7e57c2, #b39ddb);
+  background-size: 400% 400%;
+  animation: fundoAnimado 10s ease infinite;
+}
+
+@keyframes fundoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
