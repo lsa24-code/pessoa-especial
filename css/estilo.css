@@ -65,3 +65,43 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* Container dos confetes */
+.confetes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Cada confete */
+.confetes span {
+  position: absolute;
+  bottom: -50px;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  animation: subir 5s linear infinite;
+}
+
+/* Cores diferentes */
+.confetes span:nth-child(1) { left: 10%; background: #ff4d4d; animation-delay: 0s; }
+.confetes span:nth-child(2) { left: 30%; background: #ffd93d; animation-delay: 1s; }
+.confetes span:nth-child(3) { left: 50%; background: #6bcB77; animation-delay: 2s; }
+.confetes span:nth-child(4) { left: 70%; background: #4d96ff; animation-delay: 3s; }
+.confetes span:nth-child(5) { left: 90%; background: #ff6f91; animation-delay: 4s; }
+
+/* Animação subindo */
+@keyframes subir {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.5);
+    opacity: 0;
+  }
+}
